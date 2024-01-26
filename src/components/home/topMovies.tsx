@@ -5,10 +5,12 @@ function TopMovies() {
 
     const movies = [
         {
+            id: 1,
             title: "homen aranha",
             image_url: "next.svg"
         },
         {
+            id: 2,
             title: "homen aranha 2",
             image_url: "next.svg"
         }
@@ -22,8 +24,8 @@ function TopMovies() {
 
                 {movies.map(movie => {
                     return (
-                        <div>
-                            <li className="w-1/2 p-2">
+                        <div key={movie.id}>
+                            <li className="w-1/2 p-2" >
                                 <Image 
                                     width={500}
                                     height={500}
