@@ -11,10 +11,7 @@ function TopMovies() {
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
             .then(response => response.json())
-            .then(data => {
-                console.log(data.results)
-                setMovies(data.results)
-            })
+            .then(data => { setMovies(data.results)})
     }, [])
 
     return (

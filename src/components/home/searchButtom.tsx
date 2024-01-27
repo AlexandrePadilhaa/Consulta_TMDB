@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 function SearchButtom() {
     const [movieName, setmovieName] = useState('');
@@ -7,8 +8,6 @@ function SearchButtom() {
     const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
         setmovieName(event.target.value);
     };
-
-    
 
     return (
 
@@ -20,12 +19,11 @@ function SearchButtom() {
                 onChange={handleChange}
                 className=" rounded-md border-gray-400 p-2 mr-2 w-44 md:w-72"
             />
-            <button
-                className="bg-gray-600 text-black p-2 rounded-md"
-                onClick={() => console.log(movieName)}
-            >
-                Procurar
-            </button>
+          <Link href={`/moviePage/${encodeURIComponent(movieName)}`}
+          className="bg-gray-600 text-black p-2 rounded-md"
+          onClick={() => console.log(movieName)}>
+            Procurar
+          </Link>
         </div>
     );
 
