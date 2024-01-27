@@ -12,7 +12,7 @@ function SearchButtom() {
 
     return (
 
-        <div className="flex items-center ">
+        <div className="flex items-center  ">
             <input
                 type="text"
                 placeholder="EX: baby driver"
