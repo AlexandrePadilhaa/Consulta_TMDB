@@ -23,7 +23,7 @@ function TopMovies() {
 
             <ul className="grid grid-cols-2 gap-4">
                 {movies.slice(0, 8).map(movie => (
-                    <li key={movie.id} className="p-2 flex flex-col items-center">
+                    <li key={movie.id} className="p-3 flex flex-col items-center">
                         <Image
                             width={200}
                             height={300}
