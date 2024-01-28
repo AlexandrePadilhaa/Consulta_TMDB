@@ -20,8 +20,7 @@ function SearchButtom() {
                 className=" rounded-md border-gray-400 p-2 mr-2 w-44 md:w-72"
             />
           <Link href={`/moviePage/${encodeURIComponent(movieName)}`}
-          className="bg-gray-600 text-black p-2 rounded-md"
-          onClick={() => console.log(movieName)}>
+          className="bg-gray-600 text-black p-2 rounded-md">
             Procurar
           </Link>
         </div>
