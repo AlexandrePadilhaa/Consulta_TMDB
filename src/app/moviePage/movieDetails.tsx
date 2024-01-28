@@ -28,25 +28,36 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movieName }) => {
   }, [null]);
 
   return (
-    <div>
-      {movie && (
-        <>
-          <h1>ID: {movie.id}</h1>
-          <h1>Título Original: {movie.original_title}</h1>
-          <h1>nota : {movie.vote_average}</h1>
-          <Image
-            width={200}
-            height={300}
-            src={IMAGE_PATH + movie.poster_path}
-            alt="Imagem do filme"
-            className="w-44 h-150 object-cover rounded mb-2"
-          />
-          <h1>Visão Geral: {movie.overview}</h1>
-        </>
-      )}
-        {!movie && (
-      <h1>filme não encontrado</h1>
-    )}
+
+    <div className=" min-h-screen flex items-center justify-center">
+      <div className="bg-white p-8 rounded shadow-md w-1/2">
+        {movie ? (
+          <>
+
+            <div className="flex items-center mt-4">
+              <h1 className="text-2xl font-bold mb-4 mr-10">Original title: {movie.original_title}</h1>
+
+              <div className="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center">
+                <p className="text-white font-bold">{movie.vote_average}</p>
+              </div>
+            </div>
+
+            <h1 className="text-xl">Release date: {movie.release_date}</h1>
+
+            <Image
+              width={200}
+              height={300}
+              src={IMAGE_PATH + movie.poster_path}
+              alt="Imagem do filme"
+              className="ml-4 rounded shadow-md"
+            />
+
+            <h1 className="text-xl mt-4">Overview: {movie.overview}</h1>
+          </>
+        ) : (
+          <h1 className="text-xl"> Not found</h1>
+        )}
+      </div>
     </div>
   );
 };

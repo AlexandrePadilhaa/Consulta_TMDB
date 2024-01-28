@@ -10,10 +10,11 @@ export default function moviePage({ params }: {
 
         <main className="flex flex-col items-center justify-center gap-20">
 
-            <h1 className="md:text-4xl text-xl mb-8 pt-20">Confira os detalhes sobre o filme! {name}</h1>
+            <Link href="/" className="fixed top-0 left-0 p-4 text-black hover:underline" >HOME</Link>
+
+            <h1 className="md:text-4xl text-xl mb-8 pt-20">Check out more about the movie:  {name}</h1>
+
             <MovieDetails movieName={name} />
-            
-            <Link href="/">HOME</Link>
 
         </main>
 
