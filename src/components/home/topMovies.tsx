@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
+import Link from 'next/link';
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const IMAGE_PATH = 'https://image.tmdb.org/t/p/w200'
@@ -21,6 +22,7 @@ function TopMovies() {
             <ul className="grid grid-cols-2 gap-4">
                 {movies.slice(0, 8).map(movie => (
                     <li key={movie.id} className="p-3 flex flex-col items-center">
+                        <Link href={`/moviePage/${encodeURIComponent(movie.title)}`}>
                         <Image
                             width={200}
                             height={300}
@@ -28,6 +30,7 @@ function TopMovies() {
                             alt="Imagem do filme"
                             className="w-44 h-150 object-cover rounded mb-2"
                         />
+                        </Link>
                         <span className="text-center">{movie.title}</span>
                     </li>
                 ))}
